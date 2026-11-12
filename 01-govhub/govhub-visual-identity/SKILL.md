@@ -185,11 +185,20 @@ Reddit Sans e o `body` base). Depois use as receitas de
 
 ### 3. Slides / e-mail / dashboard
 
-- **Slides** ([`references/slides-sober.md`](references/slides-sober.md)):
-  HTML 1920×1080 por slide → PDF, com conferência visual de todas as
-  páginas. Fundo branco, navy + roxo + `#F2F1F6`, Reddit Sans, cabeçalho
-  e tabela iguais aos do relatório em PDF, formas oficiais só na
-  capa/seção/encerramento.
+- **Slides:** HTML 1920×1080 por slide → PDF, com conferência visual de
+  todas as páginas. Há **duas variantes**; escolha pela tabela do início
+  de `slides-evento.md` e, na dúvida, pergunte:
+  - **Evento** ([`references/slides-evento.md`](references/slides-evento.md)
+    + [`references/slides-evento.css`](references/slides-evento.css)), o
+    padrão do deck da Abrelatam: título navy com peso 400 misturado a 800,
+    eyebrow, abertura de seção com pílula roxa e numeral gigante, cartões,
+    hub, fluxo, balões, prints/fotos e QR. Para palestra, evento, oficina,
+    público externo, ou quando pedirem "igual à da Abrelatam".
+  - **Sóbria** ([`references/slides-sober.md`](references/slides-sober.md)):
+    fundo branco, cabeçalho e tabela iguais aos do relatório em PDF,
+    formas oficiais só na capa/seção/encerramento, sem `#BE006E`. Para
+    apresentação institucional, prestação de contas, aula com muito texto
+    ou tabela.
 - **E-mail:** cores inline (clientes de e-mail ignoram variáveis CSS): use os hexadecimais literais: cabeçalho `#613EFF`, texto `#2D3748`, botão CTA `#BE006E`, blocos `#F2F1F6`.
 - **Dashboard:** roxo e navy nos headers/KPIs principais; verde `#10B981` para positivo; fundos branco e `#F2F1F6`; `#BE006E` só em destaque pontual.
 
@@ -317,6 +326,7 @@ Reddit Sans 800 e as regras de cor por fundo de `palette.md`.
 - [`references/print-table.md`](references/print-table.md) — tabela de dados em PDF: legenda numerada + header sólido navy + linhas com zebra sutil, sem cartão/sombra ao redor. Use sempre que o PDF tiver uma tabela de dados — não invente um componente "cartão de tabela" novo.
 - [`references/print-watermark.md`](references/print-watermark.md) — marca d'água **opcional** em páginas de conteúdo de PDF (uma forma isolada no canto, roxo a 7 %). Pergunte antes; padrão sem. Nunca em capa, folha de identificação, índice ou encerramento.
 - [`references/slides-sober.md`](references/slides-sober.md) — apresentação (branca, navy + roxo + `#F2F1F6`, Reddit Sans, a linguagem do relatório em PDF no canvas 16:9): código exato de capa, seção, conteúdo (tópicos, duas colunas, cards, tabela), ênfase (número-chave, citação) e encerramento, rodapé só com número + símbolo, e as armadilhas do WeasyPrint com SVG inline (`currentColor`/`transform` não funcionam).
+- [`references/slides-evento.md`](references/slides-evento.md) + [`references/slides-evento.css`](references/slides-evento.css) — apresentação variante **evento** (padrão Abrelatam 2026): CSS completo para copiar, blocos HTML de capa, agenda, seção, números, cartões, hub, fluxo com retorno, pipeline, prints/fotos, balões, frase de impacto, citação, parceiros e encerramento com QR; exportação com Chrome headless, armadilhas e checklist.
 - [`references/social-posts.md`](references/social-posts.md) — **comece por aqui para post ou carrossel de Instagram/LinkedIn**: os 58 templates prontos no CDN catalogados por tipo × fundo (navy, roxo, claro), a regra de um fundo por carrossel, cor por fundo, tipografia, texto, exportação e como derivar variação nova.
 - [`references/graphic-elements-catalog.md`](references/graphic-elements-catalog.md) — as formas de apoio da marca (círculo, anel, semicírculo, quarto de círculo, pílula e derivadas) como snippets SVG inline, regras de composição para stories, poster e banner, e formatos canônicos. Não há templates de fundo prontos.
 - [`references/logo/`](references/logo/) — logo oficial Gov Hub (nova exportação do MIV): `logomarca-horizontal-*`, `logomarca-vertical-*`, `assinatura-horizontal-*`/`assinatura-vertical-*` (só o nome) e `icone-none-*` (só o ícone), cada uma em `default`/`navy`/`white`/`black`, SVG (navy ou default sobre claro, white sobre navy/roxo). Tabela de qual arquivo usar onde em `editorial-report.md` seção 1. Em `references/logo/parceiros/` ficam as logos institucionais dos parceiros (Lab Livre e UnB, que andam sempre juntas e nessa ordem porque o Lab Livre é o dono dos projetos e fica dentro da UnB; Ipea; e os ministérios MGI, MIR, Cidades e Cultura), usadas no rodapé da capa, no encerramento de slides e no fechamento de carrossel — ordem fixa: Lab Livre → UnB → Ipea (se houver) → ministério do projeto (se houver). Qual arquivo usar em cada fundo (`positivo`/`negativo`), quais faltam, e a regra do **período de defeso eleitoral** (sufixo `-defeso`) estão em [`references/partners.md`](references/partners.md).

@@ -1,0 +1,314 @@
+/* Gov Hub — slides variante EVENTO (padrão Abrelatam 2026)
+   Copie este arquivo inteiro para dentro do <style> do deck.
+   Canvas 1920×1080, uma section.gh-slide por slide. Guia: slides-evento.md */
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --primary-purple: #613EFF;
+  --purple-700:     #3F28A6;
+  --dark-navy:      #0A005A;
+  --bg-soft:        #F2F1F6;
+  --accent-rose:    #BE006E;
+  --bg-white:       #FFFFFF;
+  --text-strong:    #202020;
+  --text-body:      #2D3748;
+  --text-muted:     #666666;
+  --border-soft:    #E9DFFF;
+  --font-family-base: 'Reddit Sans', 'Open Sans', sans-serif;
+}
+
+@page { size: 1920px 1080px; margin: 0; }
+html, body { margin: 0; padding: 0; }
+body { font-family: var(--font-family-base); color: var(--text-body); background: #fff; }
+* { box-sizing: border-box; }
+
+.gh-slide {
+  position: relative; width: 1920px; height: 1080px; overflow: hidden;
+  background: var(--bg-white);
+  page-break-after: always; break-after: page;
+}
+.gh-slide:last-child { page-break-after: auto; break-after: auto; }
+.gh-slide--soft { background: var(--bg-soft); }
+.abs { position: absolute; }
+.gh-shape { position: absolute; display: block; }
+
+/* títulos com peso misto (posts): 400 com destaques em 800 */
+.gh-h { margin: 0; font-weight: 400; letter-spacing: -0.025em; line-height: 1.06; color: var(--dark-navy); }
+.gh-h b { font-weight: 800; }
+.gh-eyebrow {
+  margin: 0 0 18px; text-transform: uppercase; letter-spacing: 4px;
+  font-size: 22px; font-weight: 700; color: var(--purple-700);
+}
+.gh-lead { margin: 0; font-size: 32px; line-height: 1.45; color: var(--text-body); }
+.gh-lead b { color: var(--dark-navy); font-weight: 700; }
+
+/* cabeçalho de conteúdo: eyebrow + título misto */
+.gh-head { position: absolute; left: 120px; top: 96px; width: 1400px; }
+.gh-head .gh-h { font-size: 68px; }
+
+/* rodapé */
+.gh-footer { position: absolute; left: 120px; right: 120px; bottom: 44px; display: flex; align-items: center; justify-content: space-between; }
+.gh-footer__page { font-size: 30px; font-weight: 800; color: var(--dark-navy); }
+.gh-footer__page--white { color: #fff; }
+.gh-footer__logo { height: 52px; width: auto; }
+
+/* pílula sangrando pela direita (post 44) */
+.gh-pill-bleed {
+  position: absolute; right: 0; height: 92px; display: flex; align-items: center; gap: 20px;
+  padding: 0 60px 0 16px; border-radius: 999px 0 0 999px;
+  background: var(--primary-purple); color: #fff;
+  font-size: 26px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; white-space: nowrap;
+}
+.gh-pill-bleed__ico {
+  width: 60px; height: 60px; border-radius: 50%; border: 3px solid #fff;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* ============ CAPA / ENCERRAMENTO ============ */
+.gh-cover__logo { position: absolute; left: 120px; top: 100px; height: 64px; width: auto; }
+.gh-cover__content { position: absolute; left: 120px; top: 400px; width: 1150px; }
+.gh-pill-right { position: absolute; right: 0; border-radius: 999px 0 0 999px; background: var(--primary-purple); }
+.gh-cover__title { font-size: 112px; margin: 0 0 32px; }
+.gh-cover__subtitle { font-size: 38px; line-height: 1.35; color: var(--text-body); margin: 0 0 36px; max-width: 34ch; }
+.gh-cover__meta { font-size: 26px; line-height: 1.5; color: var(--text-muted); margin: 0; }
+.gh-cover__meta b { color: var(--dark-navy); }
+.gh-cover__footer { position: absolute; left: 120px; bottom: 80px; display: flex; align-items: center; gap: 64px; }
+.gh-cover__footer img { height: 64px; width: auto; }
+.gh-cover__footer img.gh-logo-mgi { height: 104px; }
+.gh-cover__footer img.gh-logo-abre { height: 100px; position: relative; top: -6px; } /* massa do texto fica na parte de baixo do PNG */
+
+/* ============ SEÇÃO ============ */
+.gh-sec__pill {
+  position: absolute; right: 0; top: 400px; width: 720px; height: 260px;
+  border-radius: 999px 0 0 999px; background: var(--primary-purple);
+}
+.gh-sec__num {
+  position: absolute; left: 1330px; top: 400px; font-size: 220px; font-weight: 800;
+  line-height: 260px; letter-spacing: -0.05em; color: #fff;
+}
+.gh-sec__text { position: absolute; left: 120px; top: 380px; width: 980px; }
+.gh-sec__text .gh-h { font-size: 104px; }
+
+/* ============ CICLO: linha do tempo horizontal (post 22) ============ */
+.gh-groups { position: absolute; left: 120px; right: 120px; top: 380px; display: flex; gap: 60px; }
+.gh-group { flex: 1; }
+.gh-group__label {
+  display: inline-block; padding: 12px 30px; border-radius: 999px;
+  font-size: 22px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #fff;
+}
+.gh-tl { position: relative; display: flex; margin-top: 56px; }
+.gh-tl::before {
+  content: ''; position: absolute; left: 22px; right: 0; top: 19px; height: 6px; border-radius: 3px;
+  background: var(--bg-soft);
+}
+.gh-tl__item { position: relative; flex: 1; padding-top: 80px; }
+.gh-tl__item::before {
+  content: ''; position: absolute; left: 0; top: 0; width: 44px; height: 44px; border-radius: 50%;
+  border: 9px solid var(--primary-purple); background: #fff;
+}
+.gh-tl__n { margin: 0 0 6px; font-size: 26px; font-weight: 800; color: var(--primary-purple); }
+.gh-tl__t { margin: 0; font-size: 36px; font-weight: 800; line-height: 1.12; color: var(--dark-navy); letter-spacing: -0.01em; }
+
+/* ============ KPI + grade de pontos ============ */
+.gh-kpi { margin: 0; font-size: 300px; font-weight: 800; line-height: .95; letter-spacing: -0.05em; color: var(--primary-purple); }
+.gh-dots { position: absolute; left: 1060px; top: 250px; width: 760px; }
+.gh-dots svg { display: block; }
+.gh-dots__cap { margin: 22px 0 0; font-size: 24px; color: var(--text-muted); }
+
+/* ============ lista estilo app (post 26) ============ */
+.gh-rows { position: absolute; left: 920px; right: 120px; top: 230px; }
+.gh-row {
+  display: flex; align-items: center; gap: 34px; background: #fff; border-radius: 32px;
+  padding: 40px 44px; margin-bottom: 28px;
+}
+.gh-row__n {
+  width: 84px; height: 84px; flex-shrink: 0; border-radius: 50%; background: var(--primary-purple);
+  color: #fff; font-size: 34px; font-weight: 800; text-align: center; line-height: 84px;
+}
+.gh-row__n--rose { background: var(--accent-rose); }
+.gh-row__body { flex: 1; min-width: 0; }
+.gh-row__t { font-size: 40px; font-weight: 700; color: var(--dark-navy); letter-spacing: -0.01em; }
+.gh-row__d { font-size: 28px; color: var(--text-body); margin-top: 6px; }
+
+/* ============ frase em bloco (post 53) ============ */
+.gh-block { position: absolute; background: var(--bg-soft); border-radius: 40px; padding: 80px 90px; }
+.gh-block__q { font-size: 240px; font-weight: 800; line-height: .6; height: 120px; color: var(--primary-purple); }
+.gh-block .gh-h { font-size: 64px; line-height: 1.14; }
+.gh-block__cite { margin: 40px 0 0; font-size: 28px; font-weight: 600; color: var(--dark-navy); opacity: .7; }
+
+/* ============ círculo com texto (post 24) ============ */
+.gh-bigcircle { position: absolute; border-radius: 50%; background: var(--primary-purple); }
+.gh-incircle { position: absolute; color: #fff; }
+.gh-incircle p { margin: 0 0 26px; font-size: 44px; line-height: 1.2; letter-spacing: -0.01em; }
+.gh-incircle b { font-weight: 800; }
+.gh-card { position: absolute; background: var(--bg-soft); border-radius: 36px; padding: 56px 56px; }
+.gh-card__k { font-size: 22px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); margin: 0 0 12px; }
+.gh-card__t { font-size: 44px; font-weight: 800; line-height: 1.1; color: var(--dark-navy); margin: 0 0 22px; letter-spacing: -0.02em; }
+.gh-tag { display: inline-block; padding: 10px 24px; border-radius: 999px; font-size: 22px; font-weight: 700; background: var(--primary-purple); color: #fff; }
+.gh-vtl { position: relative; margin-top: 44px; padding-left: 64px; }
+.gh-vtl::before { content: ''; position: absolute; left: 14px; top: 16px; bottom: 16px; width: 5px; border-radius: 2px; background: #fff; }
+.gh-vtl__i { position: relative; font-size: 30px; font-weight: 600; color: var(--dark-navy); margin-bottom: 22px; line-height: 1.2; }
+.gh-vtl__i::before {
+  content: ''; position: absolute; left: -64px; top: 1px; width: 34px; height: 34px; border-radius: 50%;
+  border: 7px solid var(--primary-purple); background: var(--bg-soft);
+}
+
+/* ============ hub (pipeline) ============ */
+.gh-node {
+  position: absolute; width: 460px; height: 112px; border-radius: 56px; padding: 0 44px;
+  display: flex; align-items: center; font-size: 30px; font-weight: 700; line-height: 1.15;
+}
+.gh-node--in  { left: 120px;  background: var(--bg-soft); color: var(--dark-navy); }
+.gh-node--out { right: 120px; background: var(--dark-navy); color: #fff; }
+.gh-hub {
+  position: absolute; left: 750px; top: 340px; width: 420px; height: 420px; border-radius: 50%;
+  background: var(--primary-purple); text-align: center; color: #fff; padding-top: 150px;
+}
+.gh-hub img { height: 60px; width: auto; }
+.gh-hub__layers { margin: 22px 0 0; font-size: 26px; font-weight: 600; letter-spacing: .02em; }
+.gh-hub__k { position: absolute; top: 300px; font-size: 22px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--purple-700); }
+.gh-rail {
+  position: absolute; left: 120px; right: 120px; top: 840px; height: 76px; border-radius: 38px;
+  background: var(--bg-soft); color: var(--dark-navy); font-size: 28px; font-weight: 600;
+  text-align: center; line-height: 76px;
+}
+
+/* ============ lista numerada 2×2 (post 18) ============ */
+.gh-num { position: absolute; left: 120px; right: 120px; top: 380px; display: flex; flex-wrap: wrap; }
+.gh-num__i { width: 50%; display: flex; gap: 32px; padding-right: 80px; margin-bottom: 64px; }
+.gh-num__n { font-size: 84px; font-weight: 800; line-height: .9; letter-spacing: -0.04em; color: var(--primary-purple); width: 130px; flex-shrink: 0; }
+.gh-num__t { margin: 0 0 8px; font-size: 36px; font-weight: 800; color: var(--dark-navy); letter-spacing: -0.01em; }
+.gh-num__d { margin: 0; font-size: 28px; line-height: 1.4; color: var(--text-body); }
+
+/* ============ cards claros com tensão (post 21) ============ */
+.gh-tcards { position: absolute; left: 120px; right: 120px; top: 330px; display: flex; gap: 40px; }
+.gh-tcard { flex: 1; background: var(--bg-soft); border-radius: 36px; padding: 48px 44px 52px; }
+.gh-tcard__icon { width: 96px; height: 96px; border-radius: 24px; background: #fff; text-align: center; padding-top: 18px; margin-bottom: 30px; }
+.gh-tcard__icon img { width: 60px; height: 60px; }
+.gh-vs { margin-bottom: 30px; }
+.gh-vs__p { display: inline-block; padding: 12px 26px; border-radius: 999px; font-size: 26px; font-weight: 700; color: #fff; }
+.gh-vs__x { display: block; margin: 8px 0 8px 24px; font-size: 30px; font-weight: 800; color: var(--purple-700); }
+.gh-tcard__q { margin: 0; font-size: 30px; line-height: 1.4; color: var(--dark-navy); }
+
+/* ============ balões (post 56) ============ */
+.gh-bubbles { position: absolute; left: 120px; top: 290px; width: 1080px; }
+.gh-bubble { display: inline-block; max-width: 860px; padding: 32px 44px; font-size: 36px; line-height: 1.3; border-radius: 40px; margin-bottom: 22px; }
+.gh-bubble--in { background: var(--bg-soft); color: var(--dark-navy); border-bottom-left-radius: 10px; }
+.gh-bubble--out { background: var(--accent-rose); color: #fff; border-bottom-right-radius: 10px; margin-left: 200px; }
+.gh-contact { position: absolute; left: 120px; bottom: 230px; }
+.gh-contact__a { font-size: 40px; font-weight: 800; color: var(--dark-navy); }
+.gh-contact__b { font-size: 28px; color: var(--text-muted); margin-top: 4px; }
+.gh-contact__b b { color: var(--dark-navy); }
+.gh-qr { position: absolute; left: 1435px; top: 318px; width: 280px; text-align: center; }
+.gh-qr__box {
+  width: 280px; height: 280px; border-radius: 28px; border: 3px dashed var(--dark-navy);
+  background: var(--bg-soft); color: var(--dark-navy); font-size: 26px; font-weight: 700; line-height: 274px;
+}
+.gh-qr__box img { width: 100%; height: 100%; display: block; border-radius: 28px; }
+.gh-qr__cap { margin: 16px 0 0; font-size: 24px; font-weight: 600; color: var(--purple-700); }
+
+
+/* ============ números, cartões, fluxo, tensões ============ */
+.gh-stack { position: absolute; }
+.gh-stat { background: var(--bg-soft); border-radius: 36px; padding: 40px 48px; margin-bottom: 30px; }
+.gh-stat__n { font-size: 110px; font-weight: 800; line-height: 1; letter-spacing: -0.04em; color: var(--primary-purple); margin: 0 0 12px; }
+.gh-stat__t { font-size: 30px; line-height: 1.35; color: var(--dark-navy); margin: 0; }
+.gh-note { position: absolute; font-size: 22px; color: var(--text-muted); margin: 0; }
+.gh-duo__card { border-radius: 36px; padding: 44px 52px; margin-bottom: 30px; }
+.gh-duo__k { font-size: 22px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin: 0 0 12px; }
+.gh-duo__t { font-size: 52px; line-height: 1.1; letter-spacing: -0.02em; margin: 0; }
+.gh-duo__t b { font-weight: 800; }
+.gh-grid3 { position: absolute; left: 120px; right: 120px; display: flex; gap: 40px; }
+.gh-grid3 > div { flex: 1; background: var(--bg-soft); border-radius: 36px; padding: 44px 48px; }
+.gh-chips { margin: 0; }
+.gh-chip { display: inline-block; padding: 12px 26px; border-radius: 999px; font-size: 24px; font-weight: 700; margin: 0 10px 14px 0; }
+.gh-qrow { display: flex; align-items: center; gap: 30px; background: var(--bg-soft); border-radius: 32px; padding: 34px 40px; margin-bottom: 26px; }
+.gh-qrow__n { width: 76px; height: 76px; flex-shrink: 0; border-radius: 50%; background: var(--primary-purple); color: #fff; font-size: 40px; font-weight: 800; text-align: center; line-height: 76px; }
+.gh-qrow__t { font-size: 32px; line-height: 1.3; font-weight: 600; color: var(--dark-navy); }
+.gh-moves { position: absolute; left: 120px; right: 120px; top: 600px; display: flex; gap: 40px; }
+.gh-moves > .gh-row { flex: 1; background: var(--bg-soft); margin: 0; }
+.gh-flow { position: absolute; left: 120px; right: 120px; top: 600px; display: flex; align-items: center; gap: 24px; }
+.gh-flow__step { flex: 1; border-radius: 999px; padding: 30px 40px; font-size: 32px; font-weight: 800; letter-spacing: -0.01em; line-height: 1.15; }
+.gh-flow__k { display: block; font-size: 20px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; opacity: .75; margin-bottom: 6px; }
+.gh-flow__arrow { font-size: 56px; font-weight: 800; color: var(--primary-purple); }
+.gh-bcard__tension { margin: 0 0 18px; font-size: 22px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
+.gh-bcard__t { margin: 0 0 14px; font-size: 36px; font-weight: 800; line-height: 1.15; color: var(--dark-navy); letter-spacing: -0.01em; }
+.gh-bn { position: absolute; left: 120px; right: 120px; top: 330px; display: flex; gap: 40px; }
+.gh-bn > div { flex: 1; border-radius: 36px; padding: 48px 48px 52px; }
+.gh-bn__n { margin: 0 0 26px; font-size: 96px; font-weight: 800; line-height: 1; letter-spacing: -0.04em; }
+.gh-bn__t { margin: 0 0 16px; font-size: 44px; font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; }
+.gh-bn__d { margin: 0; font-size: 30px; line-height: 1.4; }
+.gh-x__from { display: inline-block; margin: 0 0 22px; padding: 10px 22px; border-radius: 999px; background: #fff; color: var(--purple-700); font-size: 22px; font-weight: 700; }
+.gh-x__from b { color: var(--dark-navy); }
+.gh-split { flex: 1; min-width: 0; }
+.gh-split__top { background: var(--bg-soft); border-radius: 36px; padding: 44px 44px 36px; margin-bottom: 24px; }
+.gh-split__top .gh-bcard__t { margin-bottom: 18px; }
+.gh-split__top .gh-x__from { margin: 0; }
+.gh-split__bottom { border: 2.5px solid var(--border-soft); border-radius: 36px; padding: 36px 44px; }
+.gh-flow__step--back { background: #fff; color: var(--dark-navy); border: 3px dashed var(--purple-700); }
+.gh-flow__arrow { font-size: 48px; }
+.gh-back { position: absolute; left: 700px; right: 120px; top: 700px; display: flex; align-items: center; gap: 24px;
+  background: var(--bg-soft); border-radius: 999px; padding: 22px 24px 22px 44px; }
+.gh-back__k { font-size: 20px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--purple-700); }
+.gh-back .gh-flow__step { padding: 22px 34px; font-size: 28px; }
+
+/* ============ imagens, pipeline, pilares, parceiros, encerramento ============ */
+.gh-cover__footer img.gh-logo-ipea { height: 54px; }
+.gh-shot { position: absolute; border-radius: 28px; overflow: hidden; background: #fff; box-shadow: 0 0 0 3px var(--border-soft); }
+.gh-shot img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top left; }
+.gh-shot--soft { box-shadow: none; background: var(--bg-soft); padding: 22px; }
+.gh-shot--soft img { border-radius: 14px; object-fit: contain; object-position: center; background: #fff; }
+.gh-photo { position: absolute; border-radius: 36px; overflow: hidden; }
+.gh-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+/* pipeline em 3 colunas */
+.gh-pipe { position: absolute; left: 120px; right: 120px; top: 330px; display: flex; gap: 36px; align-items: stretch; }
+.gh-pipe__col { border-radius: 36px; padding: 40px 40px 44px; display: flex; flex-direction: column; }
+.gh-pipe__k { font-size: 22px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin: 0 0 24px; }
+.gh-pipe__tool { margin-top: auto; font-size: 22px; font-weight: 600; opacity: .8; }
+.gh-pipe__tool b { font-weight: 800; }
+.gh-layers { display: flex; gap: 14px; margin-bottom: 26px; }
+.gh-layer { flex: 1; border-radius: 22px; padding: 26px 0; text-align: center; font-size: 28px; font-weight: 800; color: #fff; }
+.gh-steps { display: flex; gap: 14px; }
+.gh-steps span { flex: 1; text-align: center; border-radius: 999px; padding: 16px 10px; background: #fff; color: var(--dark-navy); font-size: 22px; font-weight: 700; line-height: 1.15; }
+.gh-use { display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,.12); border-radius: 22px; padding: 20px 26px; margin-bottom: 14px; font-size: 26px; font-weight: 700; }
+.gh-use small { font-size: 20px; font-weight: 600; opacity: .75; }
+.gh-src { display: flex; align-items: center; gap: 18px; background: #fff; border-radius: 22px; padding: 22px 26px; margin-bottom: 16px; font-size: 26px; font-weight: 700; color: var(--dark-navy); }
+.gh-src i { width: 18px; height: 18px; border-radius: 50%; background: var(--primary-purple); flex-shrink: 0; }
+
+/* grade de itens curtos (pilares / impactos) */
+.gh-pillars { position: absolute; left: 120px; right: 120px; display: flex; flex-wrap: wrap; gap: 28px; }
+.gh-pillar { width: calc((100% - 56px) / 3); background: var(--bg-soft); border-radius: 32px; padding: 36px 40px; display: flex; align-items: center; gap: 28px; }
+.gh-pillar--4 { width: calc((100% - 84px) / 4); flex-direction: column; align-items: flex-start; gap: 18px; padding: 36px 36px 40px; }
+.gh-pillar__n { width: 72px; height: 72px; flex-shrink: 0; border-radius: 50%; background: var(--primary-purple); color: #fff; font-size: 30px; font-weight: 800; text-align: center; line-height: 72px; }
+.gh-pillar__t { font-size: 34px; font-weight: 800; line-height: 1.12; color: var(--dark-navy); letter-spacing: -0.01em; }
+
+/* sistemas por parceiro */
+.gh-sys { position: absolute; left: 120px; right: 120px; }
+.gh-sys__k { font-size: 22px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--purple-700); margin: 0 0 18px; }
+.gh-partners { position: absolute; left: 120px; right: 120px; top: 640px; display: flex; gap: 28px; }
+.gh-partner { flex: 1; background: var(--bg-soft); border-radius: 32px; padding: 32px 32px 26px; }
+.gh-partner__n { display: inline-block; padding: 10px 26px; border-radius: 999px; background: var(--dark-navy); color: #fff; font-size: 24px; font-weight: 800; margin-bottom: 22px; }
+.gh-partner .gh-chip { background: #fff; color: var(--dark-navy); font-size: 22px; }
+
+/* encerramento: 3 colunas de contato */
+.gh-ends { position: absolute; left: 120px; right: 120px; top: 300px; display: flex; gap: 48px; }
+.gh-end { flex: 1; background: var(--bg-soft); border-radius: 40px; padding: 44px; text-align: center; }
+.gh-end__k { font-size: 22px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--purple-700); margin: 0 0 28px; }
+.gh-end__media { width: 300px; height: 300px; margin: 0 auto; border-radius: 28px; overflow: hidden; background: #fff; }
+.gh-end__media img { width: 100%; height: 100%; display: block; object-fit: contain; }
+.gh-end__media--round { border-radius: 50%; }
+.gh-end__media--round img { object-fit: cover; }
+.gh-end__t { margin: 26px 0 0; font-size: 30px; font-weight: 800; color: var(--dark-navy); }
+.gh-end__d { margin: 4px 0 0; font-size: 24px; color: var(--text-muted); }
+
+/* ============ agenda e figura grande ============ */
+.gh-agenda { position: absolute; left: 120px; right: 120px; top: 360px; display: flex; flex-wrap: wrap; }
+.gh-agenda .gh-num__i { margin-bottom: 72px; align-items: center; }
+.gh-agenda .gh-num__t { margin: 0; font-size: 44px; }
+.gh-agenda .gh-num__i--b .gh-num__n { color: var(--accent-rose); }
+.gh-head--compact { top: 64px; width: 1680px; }
+.gh-head--compact .gh-eyebrow { margin-bottom: 10px; }
+.gh-head--compact .gh-h { font-size: 56px; }
+.gh-fig { position: absolute; left: 120px; right: 120px; top: 196px; bottom: 112px; display: flex; align-items: center; justify-content: center; }
+.gh-fig img { max-width: 100%; max-height: 100%; display: block; }

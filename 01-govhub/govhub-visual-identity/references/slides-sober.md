@@ -7,8 +7,13 @@ Slides **brancos**, validada com o usuário em 2026-09-18
 fundo branco em todo slide, paleta só **navy + roxo + `#F2F1F6`** (o
 modo sóbrio de `palette.md`; `#BE006E` não entra), Reddit Sans em tudo,
 formas oficiais apenas na capa, na abertura de seção e no encerramento.
-Vale para qualquer apresentação (institucional, evento, aula): a
-variante colorida com templates do CDN foi descontinuada em 2026-09-30.
+A variante colorida com templates do CDN foi descontinuada em 2026-09-30.
+Desde 2026-11-12 existe também a variante **evento** (padrão Abrelatam),
+em [`slides-evento.md`](slides-evento.md), para palestra, evento e
+oficina; esta aqui segue valendo para apresentação institucional, aula
+com muito texto ou tabela e prestação de contas. As regras abaixo (sem
+`#BE006E`, título roxo, formas só na capa/seção/encerramento) valem só
+para a variante sóbria.
 
 ## Arquitetura e exportação
 
